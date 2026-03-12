@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/*
+ * This class is responsible for storing and retrieving tasks from a file.
+ * Tasks are saved in JSON format so they can persist even after the program closes.
+ */
 public class TaskStorage {
     private final String storagePath;
     private final Map<String, Task> tasks;
@@ -115,7 +119,7 @@ public class TaskStorage {
                 .collect(Collectors.toList());
     }
 
-    // Custom serializer for LocalDateTime
+    //A custom serializer for LocalDateTime
     private static class LocalDateTimeSerializer implements JsonSerializer<LocalDateTime> {
         private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
@@ -125,7 +129,7 @@ public class TaskStorage {
         }
     }
 
-    // Custom deserializer for LocalDateTime
+    //A custom deserializer for LocalDateTime
     private static class LocalDateTimeDeserializer implements JsonDeserializer<LocalDateTime> {
         @Override
         public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
