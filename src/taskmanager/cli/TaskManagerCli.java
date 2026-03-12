@@ -20,7 +20,7 @@ public class TaskManagerCli {
         CommandLineParser parser = new DefaultParser();
         HelpFormatter formatter = new HelpFormatter();
 
-        // Global options
+        //Global options below:
         options.addOption(Option.builder("h").longOpt("help").desc("Show help").build());
 
         try {
