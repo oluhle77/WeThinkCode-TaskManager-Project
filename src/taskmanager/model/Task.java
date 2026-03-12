@@ -39,7 +39,7 @@ public class Task {
         this(title, description, TaskPriority.MEDIUM, null, null);
     }
 
-    // Getters and Setters
+    //Getters and Setters
     public String getId() {
         return id;
     }
@@ -120,7 +120,7 @@ public class Task {
         this.tags = new ArrayList<>(tags);
     }
 
-    // Business methods
+    //Business methods
     public void update(Task updates) {
         if (updates.getTitle() != null) {
             this.title = updates.getTitle();
@@ -153,7 +153,7 @@ public class Task {
         if (this.dueDate == null) {
             return false;
         }
-        // archived tasks are no longer active, treat them as not overdue
+        //archived tasks are no longer active, treat them as not overdue
         return this.dueDate.isBefore(LocalDateTime.now()) &&
                 this.status != TaskStatus.DONE &&
                 this.status != TaskStatus.ARCHIVED;
