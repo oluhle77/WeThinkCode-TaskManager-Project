@@ -70,6 +70,7 @@ public class TaskManager {
         return storage.getAllTasks();
     }
 
+    //Using boolean in this function to determine if the due date had been reached by means of true/false
     public boolean updateTaskStatus(String taskId, String newStatusValue) {
         TaskStatus newStatus = TaskStatus.fromValue(newStatusValue);
 
